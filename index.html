@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cayenne 957 Drawer Build — DIY Twin-Drawer System (Malaysia)</title>
+<meta name="description" content="A complete DIY build guide and sourcing dashboard for a rear twin-drawer storage system in a Porsche Cayenne S (957, 2009) — sketches, marine/birch plywood, Malaysia-only material costs in MYR, hardware, cut list and step-by-step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#15120d; --bg2:#1c1812; --panel:#211c15; --line:#352d22;
+    --ink:#f3ece0; --muted:#a99e8c; --rust:#d2782f; --rust-lt:#eb9b4b;
+    --green:#7ea35a; --blue:#5cc8ff; --blueprint:#0c1c2b; --blueprint-line:#5cc8ff;
+    --warn:#e0b04b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:400 16px/1.65 'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.15}
+  a{color:var(--rust-lt);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,.mono{font-family:'JetBrains Mono',monospace;font-size:.9em}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  section{padding:54px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font:600 12px/1 'Oswald';letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:12px}
+  h2{font-size:clamp(24px,4vw,34px);text-transform:uppercase;margin-bottom:6px}
+  .lead{color:var(--muted);max-width:760px;margin-bottom:26px}
+  h3{font-size:20px;margin:30px 0 12px;color:var(--rust-lt)}
+  p{margin-bottom:14px}
+  ul,ol{margin:0 0 16px 22px}
+  li{margin-bottom:7px}
+
+  /* hero */
+  header.hero{position:relative;padding:84px 0 64px;background:
+    linear-gradient(160deg,rgba(20,17,12,.55),rgba(20,17,12,.92)),
+    radial-gradient(circle at 78% 18%,rgba(210,120,47,.28),transparent 55%),
+    var(--bg2);
+    border-bottom:1px solid var(--line);overflow:hidden}
+  .hero .badge{display:inline-block;border:1px solid var(--rust);color:var(--rust-lt);font:600 11px/1 'Oswald';letter-spacing:.2em;text-transform:uppercase;padding:7px 12px;border-radius:3px;margin-bottom:20px}
+  .hero h1{font-size:clamp(34px,7vw,68px);font-weight:700;text-transform:uppercase}
+  .hero h1 span{color:var(--rust-lt)}
+  .hero .sub{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:680px;margin-top:16px}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:600 12.5px/1 'Oswald';letter-spacing:.06em;color:var(--ink)}
+  .chip b{color:var(--rust-lt)}
+
+  /* sticky nav */
+  nav.toc{position:sticky;top:0;z-index:50;background:rgba(21,18,13,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding:10px 22px;scrollbar-width:none}
+  nav.toc .wrap::-webkit-scrollbar{display:none}
+  nav.toc a{white-space:nowrap;font:600 12px/1 'Oswald';letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 11px;border-radius:4px}
+  nav.toc a:hover{color:var(--ink);background:rgba(255,255,255,.05);text-decoration:none}
+
+  /* disclaimer */
+  .note{background:rgba(224,176,75,.09);border:1px solid rgba(224,176,75,.35);border-left:3px solid var(--warn);border-radius:6px;padding:14px 16px;color:#f0e3c4;font-size:14.5px;margin:18px 0}
+  .note b{color:var(--warn)}
+  .tip{background:rgba(126,163,90,.1);border:1px solid rgba(126,163,90,.32);border-left:3px solid var(--green);border-radius:6px;padding:14px 16px;font-size:14.5px;margin:16px 0}
+  .tip b{color:var(--green)}
+
+  /* tables */
+  .tbl{width:100%;border-collapse:collapse;margin:10px 0 22px;font-size:14.5px;overflow:hidden;border-radius:8px;border:1px solid var(--line)}
+  .tbl th,.tbl td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{background:var(--panel);font:600 12px/1.2 'Oswald';letter-spacing:.07em;text-transform:uppercase;color:var(--rust-lt)}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl td.num,.tbl th.num{font-family:'JetBrains Mono';white-space:nowrap}
+  .tbl .myr{color:var(--green);font-weight:600}
+  .tbl tr:nth-child(even) td{background:rgba(255,255,255,.018)}
+  .scroll{overflow-x:auto}
+  .pick{background:rgba(210,120,47,.1)!important}
+
+  /* cards / grids */
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+  .card h4{font-size:16px;color:var(--ink);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .card .k{font-family:'JetBrains Mono';color:var(--rust-lt);font-size:13px}
+  .proscons{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:14px 0}
+  .proscons div{padding:14px 16px}
+  .proscons .pro{background:rgba(126,163,90,.08)}
+  .proscons .con{background:rgba(210,120,47,.07);border-left:1px solid var(--line)}
+  .proscons h5{font:600 12px/1 'Oswald';letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
+  .proscons .pro h5{color:var(--green)} .proscons .con h5{color:var(--rust-lt)}
+  .proscons ul{margin:0 0 0 18px;font-size:13.5px} .proscons li{margin-bottom:5px;color:var(--muted)}
+
+  /* sketches */
+  figure{margin:22px 0;background:var(--blueprint);border:1px solid #1b3247;border-radius:10px;padding:8px 8px 0;overflow:hidden}
+  figure svg{display:block;width:100%;height:auto;background:var(--blueprint)}
+  figcaption{font:500 13px/1.5 'JetBrains Mono';color:#9fd0ee;padding:11px 10px 13px;border-top:1px solid #173042}
+  figcaption b{color:#cfe9fa;font-family:'Oswald';letter-spacing:.04em}
+  .bp-fill{fill:#0c1c2b}
+  .bp-line{fill:none;stroke:var(--blueprint-line);stroke-width:2}
+  .bp-thin{fill:none;stroke:#3a86b5;stroke-width:1}
+  .bp-dash{fill:none;stroke:#6fb6e0;stroke-width:1;stroke-dasharray:5 4}
+  .bp-fillsoft{fill:rgba(92,200,255,.07);stroke:var(--blueprint-line);stroke-width:2}
+  .bp-accent{fill:none;stroke:var(--rust-lt);stroke-width:2.5}
+  .bp-accentfill{fill:rgba(235,155,75,.14);stroke:var(--rust-lt);stroke-width:2.2}
+  .bp-t{fill:#cfe9fa;font-family:'JetBrains Mono',monospace;font-size:13px}
+  .bp-ts{fill:#9fd0ee;font-family:'JetBrains Mono',monospace;font-size:11px}
+  .bp-tlabel{fill:#fff;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em}
+  .bp-acc-t{fill:var(--rust-lt);font-family:'Oswald',sans-serif;font-size:13px;font-weight:600}
+  .dim{stroke:#6fb6e0;stroke-width:1}
+  .seq-num{fill:var(--rust-lt);font-family:'Oswald';font-size:22px;font-weight:700}
+
+  .cost-tier{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .cost-tier .head{padding:16px 18px;font-family:'Oswald';text-transform:uppercase}
+  .cost-tier .total{font-size:30px;font-weight:700;font-family:'Oswald'}
+  .cost-tier.mid{border-color:var(--rust)}
+  .cost-tier.mid .head{background:rgba(210,120,47,.14)}
+  .cost-tier ul{list-style:none;margin:0;padding:14px 18px;font-size:13.5px}
+  .cost-tier li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+  .cost-tier li:last-child{border:0}
+  .cost-tier li b{color:var(--ink);font-family:'JetBrains Mono';font-weight:500}
+
+  footer{padding:40px 0 60px;color:var(--muted);font-size:13px}
+  footer .wrap>p{margin-bottom:8px}
+  .src{font-size:12.5px;color:#7d7464}
+  .src a{color:#9a8e79}
+
+  @media(max-width:760px){
+    .g2,.g3{grid-template-columns:1fr}
+    .proscons{grid-template-columns:1fr}
+    .proscons .con{border-left:0;border-top:1px solid var(--line)}
+    section{padding:40px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">DIY Build Dashboard · Malaysia sourcing</span>
+    <h1>Cayenne&nbsp;957<br><span>Twin-Drawer Build</span></h1>
+    <p class="sub">A full build guide + sketches + sourcing dashboard for a rear four-drawer storage system with a pivoting chopping-board slide — designed for a Porsche&nbsp;Cayenne&nbsp;S (957, 2009), built from marine/birch plywood, sourced entirely in Malaysia.</p>
+    <div class="meta">
+      <span class="chip">Config: <b>4 drawers + flat deck</b></span>
+      <span class="chip">Material: <b>18mm marine/birch ply</b></span>
+      <span class="chip">Handles: <b>skateboard trucks ♻</b></span>
+      <span class="chip">Recommended cost: <b>~RM 1,400–1,700</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#vehicle">Vehicle &amp; Dimensions</a>
+    <a href="#design">The Design</a>
+    <a href="#sketches">Sketches</a>
+    <a href="#materials">Materials</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#cutlist">Cut List</a>
+    <a href="#build">Build Steps</a>
+    <a href="#cost">Costs</a>
+    <a href="#sourcing">Where to Buy</a>
+  </div>
+</nav>
+
+<!-- ============ VEHICLE ============ -->
+<section id="vehicle">
+  <div class="wrap">
+    <span class="eyebrow">01 · Your Vehicle</span>
+    <h2>The Cayenne 957 Cargo Bay</h2>
+    <p class="lead">Porsche never published interior linear cargo dimensions for the 957, so the figures below are owner-measured (Rennlist 955/957 cargo threads), cross-checked against the near-identical 958 body. Treat every linear figure as ±15–25&nbsp;mm.</p>
+
+    <div class="note"><b>⚠ Measure before you cut.</b> These are planning figures, not gospel. The build-critical unknowns — <b>width between the wheel-arch intrusions</b>, the <b>tailgate aperture</b>, and the <b>seats-up floor length</b> — must be measured on your actual car. See the checklist below.</div>
+
+    <div class="scroll">
+    <table class="tbl">
+      <tr><th>Dimension</th><th class="num">mm</th><th>Notes</th></tr>
+      <tr><td>Cargo volume — seats up</td><td class="num">540 L</td><td>Well-sourced (Parkers, Carbuyer, CarsGuide)</td></tr>
+      <tr><td>Cargo volume — seats folded</td><td class="num">~1,770 L</td><td>Folded backs leave a slight step — not perfectly flat</td></tr>
+      <tr><td>Load-floor length, seats up</td><td class="num">~915</td><td><b>Your drawer-depth driver.</b> Seatback → tailgate at floor</td></tr>
+      <tr><td>Load length, seats folded</td><td class="num">~1,525–1,600</td><td>Lets the deck double as a sleeping/load platform</td></tr>
+      <tr><td>Max width (at floor)</td><td class="num">~1,168</td><td>Widest point (46″)</td></tr>
+      <tr><td>Width between wheel arches</td><td class="num">~1,000–1,090 ⚠</td><td><b>NOT published — MEASURE.</b> Estimated from 958 (~43″)</td></tr>
+      <tr><td>Floor → rear window line</td><td class="num">~508</td><td>Keep the unit below this to preserve rear visibility</td></tr>
+      <tr><td>Floor → ceiling</td><td class="num">~813</td><td>Total vertical envelope</td></tr>
+      <tr><td>Tailgate aperture</td><td class="num">MEASURE ⚠</td><td>Narrower than interior — the unit must pass through it</td></tr>
+    </table>
+    </div>
+
+    <h3>Boot floor — what you can bolt to, and what NOT to drill</h3>
+    <ul>
+      <li><b>The floor is flat with a lift-out panel; a spare-wheel well sits underneath.</b> On Bose cars the <b>subwoofer + amp</b> live in/around that well.</li>
+      <li><b>Do NOT drill</b> the spare-well lid/pan, anywhere near the sub/amp, or the floor pan generally (fuel/brake lines, AWD &amp; exhaust run beneath).</li>
+      <li><b>Anchor to the factory lashing/tie-down eyes</b> on the loadspace floor. Build the unit as a free-standing box that <b>straps/bolts to those points</b> — the standard approach for 955/957 platforms.</li>
+      <li>Keep the <b>left-side trim panel 12V socket</b> accessible. Make the top deck <b>lift-out or hinged</b> so you can still reach the spare well / sub.</li>
+      <li>Roof load limit <b>100 kg</b>; payload sits ~600–700 kg — <b>confirm from your door-jamb plate</b>.</li>
+    </ul>
+
+    <h3>Measurement checklist (do this first)</h3>
+    <div class="card">
+      <ol style="margin-bottom:0">
+        <li><b>Width between wheel arches</b> at floor level and again at 300&nbsp;mm up (arches lean in) — use the <b>smaller</b> number.</li>
+        <li><b>Tailgate aperture</b> width &amp; height — the unit has to physically go in. Account for the closing seal.</li>
+        <li><b>Seats-up floor length</b> at the height your unit will sit (the bay tapers toward the top).</li>
+        <li><b>Spare-well lid footprint + sub/amp location</b> — mark the no-drill zone.</li>
+        <li><b>Floor slope &amp; tie-down positions</b> — note where the lashing eyes are for your straps/bolts.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESIGN ============ -->
+<section id="design">
+  <div class="wrap">
+    <span class="eyebrow">02 · The Design</span>
+    <h2>Four Drawers, One Pivoting Bench</h2>
+    <p class="lead">Two side-by-side columns, each split into an upper and a lower tier — four independent drawers — under one fixed flat deck. The lower tier runs on longer (over-travel) slides so it pulls out further than the upper; the left-lower is a chopping-board slide that pivots out and locks square, or lifts off to relocate.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <h4>🗄️ Layout</h4>
+        <ul style="margin-bottom:0">
+          <li><b>Top deck (fixed):</b> flat load / sleeping platform; lift-out section over the spare well.</li>
+          <li><b>Upper L &amp; R:</b> storage drawers on full-extension <b>locking</b> slides.</li>
+          <li><b>Lower L &amp; R:</b> longer <b>over-travel</b> slides — extend past the bumper.</li>
+          <li><b>Lower-Left = chopping board</b> (the kitchen). <b>Lower-Right = deep storage</b> (stove, poles, long gear).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>📐 Recommended envelope</h4>
+        <p style="margin-bottom:8px;color:var(--muted)">Sits on the load floor, strapped to factory tie-downs.</p>
+        <table class="tbl" style="margin:0">
+          <tr><th>Axis</th><th class="num">Target</th></tr>
+          <tr><td>Width</td><td class="num">1,000 mm</td></tr>
+          <tr><td>Depth</td><td class="num">850 mm</td></tr>
+          <tr><td>Height (deck top)</td><td class="num">340 mm</td></tr>
+        </table>
+        <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Two ~120&nbsp;mm tiers + structure + 18&nbsp;mm deck ≈ 340&nbsp;mm — comfortably below the 508&nbsp;mm window line. Widen to ~1,040&nbsp;mm only if you measure ≥1,050&nbsp;mm clear.</p>
+      </div>
+    </div>
+
+    <div class="tip"><b>♻ Skateboard-truck handles.</b> One old deck gives you <b>two trucks</b> → two grab handles. The baseplate bolts flat to the drawer face and the hanger/axle becomes the pull bar — rugged, grippy with gloves, and a great signature detail. Spec them on the <b>two lower drawers</b> (the ones you yank most); use recessed flush pulls on the uppers, or find a second old board for four matching trucks. Detail sketch in the gallery below.</p></div>
+  </div>
+</section>
+
+<!-- ============ SKETCHES ============ -->
+<section id="sketches">
+  <div class="wrap">
+    <span class="eyebrow">03 · Sketches</span>
+    <h2>Technical Drawings</h2>
+    <p class="lead">To-scale concept drawings (dimensions in mm). These are design intent for planning — confirm every fit against your measured car before cutting.</p>
+
+    <!-- TOP / PLAN VIEW -->
+    <figure>
+      <svg viewBox="0 0 760 470" role="img" aria-label="Top plan view of the drawer unit in the cargo bay">
+        <!-- cargo bay outline -->
+        <path class="bp-dash" d="M70 60 L690 60 L690 410 L70 410 Z"/>
+        <text class="bp-ts" x="80" y="80">CARGO BAY (plan) — verify on car</text>
+        <!-- wheel arches -->
+        <path class="bp-thin" d="M70 150 Q150 150 150 230 Q150 320 70 320" fill="rgba(92,200,255,.05)"/>
+        <path class="bp-thin" d="M690 150 Q610 150 610 230 Q610 320 610 320 Q610 320 690 320" fill="rgba(92,200,255,.05)"/>
+        <text class="bp-ts" x="92" y="238">wheel</text><text class="bp-ts" x="92" y="252">arch</text>
+        <text class="bp-ts" x="622" y="238">wheel</text><text class="bp-ts" x="622" y="252">arch</text>
+        <!-- unit footprint -->
+        <rect class="bp-fillsoft" x="170" y="120" width="420" height="270" rx="4"/>
+        <!-- divider -->
+        <line class="bp-line" x1="380" y1="120" x2="380" y2="390"/>
+        <!-- left column drawers (pull DOWN toward tailgate = bottom) -->
+        <rect class="bp-line" x="186" y="135" width="180" height="115"/>
+        <rect class="bp-accentfill" x="186" y="258" width="180" height="120"/>
+        <text class="bp-tlabel" x="200" y="170">UPPER-L</text><text class="bp-ts" x="200" y="188">storage drawer</text>
+        <text class="bp-acc-t" x="200" y="300">LOWER-L</text><text class="bp-ts" x="200" y="318">CHOPPING BOARD</text><text class="bp-ts" x="200" y="332">(over-travel + pivot)</text>
+        <!-- right column drawers -->
+        <rect class="bp-line" x="394" y="135" width="180" height="115"/>
+        <rect class="bp-line" x="394" y="258" width="180" height="120"/>
+        <text class="bp-tlabel" x="408" y="170">UPPER-R</text><text class="bp-ts" x="408" y="188">storage drawer</text>
+        <text class="bp-tlabel" x="408" y="300">LOWER-R</text><text class="bp-ts" x="408" y="318">deep storage</text><text class="bp-ts" x="408" y="332">(over-travel)</text>
+        <!-- pull direction -->
+        <path class="bp-accent" d="M380 398 l0 26 M372 416 l8 8 l8 -8" /><text class="bp-acc-t" x="392" y="424">pull → tailgate</text>
+        <!-- width dim -->
+        <line class="dim" x1="170" y1="100" x2="590" y2="100"/><path class="bp-thin" d="M170 95 l0 10 M590 95 l0 10"/>
+        <text class="bp-t" x="350" y="92">1000</text>
+        <!-- depth dim (outside the bay, clear of the arch labels) -->
+        <line class="dim" x1="712" y1="120" x2="712" y2="390"/><path class="bp-thin" d="M707 120 l10 0 M707 390 l10 0"/>
+        <text class="bp-t" x="722" y="259" transform="rotate(-90 727 255)">850</text>
+        <!-- clearance dim -->
+        <line class="dim" x1="150" y1="430" x2="170" y2="430"/><text class="bp-ts" x="120" y="447">arch clr</text>
+      </svg>
+      <figcaption><b>FIG.1 — PLAN VIEW.</b> Unit footprint 1000×850 set inside the bay, clear of the wheel arches. Divider splits L/R; all four drawers pull toward the tailgate. Lower drawers (longer slides) shown larger; Lower-Left is the chopping-board bench.</figcaption>
+    </figure>
+
+    <!-- SIDE CROSS SECTION -->
+    <figure>
+      <svg viewBox="0 0 760 430" role="img" aria-label="Side cross-section showing tiers">
+        <!-- window line ref -->
+        <line class="bp-dash" x1="60" y1="70" x2="700" y2="70"/><text class="bp-ts" x="64" y="64">rear window line ≈ 508mm above floor</text>
+        <!-- floor -->
+        <line class="bp-line" x1="60" y1="360" x2="700" y2="360" /><text class="bp-ts" x="64" y="378">boot load floor (strap to tie-downs)</text>
+        <!-- carcass -->
+        <rect class="bp-fillsoft" x="120" y="150" width="520" height="210"/>
+        <!-- deck -->
+        <rect class="bp-accentfill" x="112" y="138" width="536" height="16"/>
+        <text class="bp-acc-t" x="300" y="132">FLAT DECK (18mm, lift-out over spare well)</text>
+        <!-- upper drawer -->
+        <rect class="bp-line" x="140" y="168" width="430" height="80"/>
+        <text class="bp-tlabel" x="160" y="200">UPPER DRAWER</text><text class="bp-ts" x="160" y="218">full-ext locking slide</text>
+        <!-- upper extension ghost -->
+        <rect class="bp-dash" x="570" y="168" width="120" height="80"/><text class="bp-ts" x="582" y="212">pulled out</text>
+        <!-- divider shelf -->
+        <line class="bp-line" x1="140" y1="256" x2="570" y2="256"/>
+        <!-- lower drawer -->
+        <rect class="bp-line" x="140" y="264" width="430" height="86"/>
+        <text class="bp-tlabel" x="160" y="296">LOWER (longer)</text><text class="bp-ts" x="160" y="314">over-travel slide — extends further</text>
+        <rect class="bp-dash" x="570" y="264" width="175" height="86"/><text class="bp-ts" x="582" y="310">extends past bumper</text>
+        <!-- height dims -->
+        <line class="dim" x1="92" y1="138" x2="92" y2="360"/><path class="bp-thin" d="M87 138 l10 0 M87 360 l10 0"/><text class="bp-t" x="64" y="252" transform="rotate(-90 70 252)">340</text>
+        <line class="dim" x1="708" y1="70" x2="708" y2="360"/><path class="bp-thin" d="M703 70 l10 0 M703 360 l10 0"/><text class="bp-t" x="716" y="220" transform="rotate(-90 720 220)">508</text>
+      </svg>
+      <figcaption><b>FIG.2 — SIDE CROSS-SECTION.</b> Two ~120&nbsp;mm tiers under an 18&nbsp;mm deck = 340&nbsp;mm total, below the 508&nbsp;mm window line. Upper on full-extension locking slides; lower on longer over-travel slides that reach past the bumper (dashed = deployed).</figcaption>
+    </figure>
+
+    <!-- EXPLODED -->
+    <figure>
+      <svg viewBox="0 0 760 440" role="img" aria-label="Exploded carcass">
+        <text class="bp-ts" x="60" y="34">EXPLODED — carcass panels (18mm) + drawer boxes (12mm)</text>
+        <!-- base -->
+        <path class="bp-line" d="M150 360 l300 0 l120 -54 l-300 0 Z"/><text class="bp-tlabel" x="300" y="345">BASE 18mm</text>
+        <!-- left side -->
+        <path class="bp-line" d="M150 360 l0 -150 l120 -54 l0 150 Z"/><text class="bp-ts" x="178" y="300">side</text><text class="bp-ts" x="178" y="314">18mm</text>
+        <!-- right side -->
+        <path class="bp-thin" d="M450 360 l0 -150 l120 -54 l0 150 Z" opacity=".6"/>
+        <!-- back -->
+        <path class="bp-line" d="M270 306 l300 0 l0 150 M270 306 l0 150" opacity=".5"/>
+        <!-- divider -->
+        <path class="bp-dash" d="M300 348 l0 -150 l120 -54 l0 150 Z"/><text class="bp-ts" x="318" y="285">centre</text><text class="bp-ts" x="318" y="299">divider</text>
+        <!-- deck floating above -->
+        <path class="bp-accentfill" d="M180 130 l320 0 l120 -54 l-320 0 Z"/><text class="bp-acc-t" x="320" y="112">DECK 18mm</text>
+        <!-- explode arrows -->
+        <path class="bp-accent" d="M360 175 l0 25 M352 190 l8 10 l8 -10"/>
+        <!-- drawer box -->
+        <g transform="translate(600,250)">
+          <rect class="bp-fillsoft" x="0" y="0" width="120" height="70"/>
+          <text class="bp-ts" x="8" y="-8">drawer box 12mm</text>
+          <text class="bp-ts" x="10" y="40">+ HDPE / ply</text><text class="bp-ts" x="10" y="54">bottom</text>
+        </g>
+      </svg>
+      <figcaption><b>FIG.3 — EXPLODED CARCASS.</b> Outer box, base &amp; deck in 18&nbsp;mm; centre divider carries the inner slides. Drawer boxes in lighter 12&nbsp;mm. Glue + screw (or pocket-hole) every joint; the divider must be dead-square — the slides reference off it.</figcaption>
+    </figure>
+
+    <!-- CHOPPING BOARD SEQUENCE -->
+    <figure>
+      <svg viewBox="0 0 760 320" role="img" aria-label="Chopping board deployment sequence">
+        <text class="bp-ts" x="60" y="28">CHOPPING-BOARD DEPLOYMENT (lower-left)</text>
+        <!-- frame 1 stowed -->
+        <g transform="translate(70,70)">
+          <text class="seq-num" x="0" y="-14">1</text>
+          <rect class="bp-line" x="0" y="0" width="120" height="120"/>
+          <rect class="bp-accentfill" x="8" y="40" width="104" height="22"/>
+          <text class="bp-ts" x="16" y="150">stowed &amp; locked in</text>
+        </g>
+        <!-- frame 2 out -->
+        <g transform="translate(240,70)">
+          <text class="seq-num" x="0" y="-14">2</text>
+          <rect class="bp-line" x="0" y="0" width="120" height="120"/>
+          <rect class="bp-accentfill" x="78" y="40" width="120" height="22"/>
+          <path class="bp-accent" d="M150 30 l40 0 M180 22 l10 8 l-10 8"/>
+          <text class="bp-ts" x="6" y="150">pull out (over-travel,</text><text class="bp-ts" x="6" y="164">lock-out engaged)</text>
+        </g>
+        <!-- frame 3 pivot -->
+        <g transform="translate(470,70)">
+          <text class="seq-num" x="0" y="-14">3</text>
+          <rect class="bp-line" x="0" y="0" width="120" height="120"/>
+          <rect class="bp-accentfill" x="100" y="40" width="22" height="120"/>
+          <circle class="bp-accent" cx="111" cy="51" r="7"/>
+          <path class="bp-accent" d="M150 50 q30 20 14 60"/><text class="bp-acc-t" x="150" y="40">90°</text>
+          <text class="bp-ts" x="6" y="190">pivot on lock-pin,</text><text class="bp-ts" x="6" y="204">drop pin into detent</text>
+        </g>
+        <!-- frame 4 lift off -->
+        <g transform="translate(650,70)">
+          <text class="seq-num" x="0" y="-14">4</text>
+          <rect class="bp-line" x="0" y="0" width="70" height="120" opacity=".5"/>
+          <rect class="bp-accentfill" x="14" y="-22" width="80" height="20"/>
+          <path class="bp-accent" d="M50 16 l0 -22 M42 6 l8 -10 l8 10"/>
+          <text class="bp-ts" x="-6" y="150">lift off</text><text class="bp-ts" x="-6" y="165">&amp; relocate</text>
+        </g>
+      </svg>
+      <figcaption><b>FIG.4 — CHOPPING-BOARD SEQUENCE.</b> (1) Stowed/locked → (2) pull out on the over-travel slide, lock-out holds it → (3) swing 90° on the front pivot-pin and drop the spring detent to lock square → (4) or lift the board clean off its pins to set it elsewhere.</figcaption>
+    </figure>
+
+    <div class="grid g2">
+      <!-- SLIDE DETAIL -->
+      <figure>
+        <svg viewBox="0 0 380 230" role="img" aria-label="Locking slide detail">
+          <text class="bp-ts" x="20" y="26">53mm 3-FOLD LOCKING SLIDE (×-section)</text>
+          <rect class="bp-line" x="40" y="70" width="300" height="14"/>
+          <rect class="bp-line" x="40" y="92" width="240" height="14"/>
+          <rect class="bp-accentfill" x="40" y="114" width="180" height="14"/>
+          <circle class="bp-thin" cx="70" cy="77" r="3"/><circle class="bp-thin" cx="120" cy="99" r="3"/><circle class="bp-thin" cx="100" cy="121" r="3"/>
+          <text class="bp-ts" x="250" y="80">fixed member</text>
+          <text class="bp-ts" x="290" y="102">intermediate</text>
+          <text class="bp-acc-t" x="40" y="150">drawer member</text>
+          <path class="bp-accent" d="M150 165 l0 18 M142 175 l8 8 l8 -8"/>
+          <text class="bp-acc-t" x="60" y="200">press lever → lock IN / lock OUT</text>
+        </svg>
+        <figcaption><b>FIG.5 — SLIDE.</b> Three-fold ball-bearing, ~100–120&nbsp;kg, full extension with a lock-in/lock-out lever. The correct vehicle-grade part.</figcaption>
+      </figure>
+
+      <!-- SKATE TRUCK HANDLE -->
+      <figure>
+        <svg viewBox="0 0 380 230" role="img" aria-label="Skateboard truck handle detail">
+          <text class="bp-ts" x="20" y="26">SKATEBOARD-TRUCK HANDLE ♻</text>
+          <!-- drawer face -->
+          <rect class="bp-fillsoft" x="40" y="50" width="300" height="150"/>
+          <text class="bp-ts" x="50" y="68">drawer face (18mm)</text>
+          <!-- baseplate -->
+          <rect class="bp-accentfill" x="150" y="95" width="80" height="20"/>
+          <!-- bolts -->
+          <circle class="bp-accent" cx="160" cy="105" r="4"/><circle class="bp-accent" cx="220" cy="105" r="4"/>
+          <circle class="bp-accent" cx="160" cy="160" r="4"/><circle class="bp-accent" cx="220" cy="160" r="4"/>
+          <text class="bp-ts" x="234" y="96">baseplate</text><text class="bp-ts" x="234" y="110">bolts thru face</text>
+          <!-- hanger as grab bar -->
+          <path class="bp-accent" d="M150 130 q40 40 80 0"/>
+          <circle class="bp-accentfill" cx="190" cy="150" r="10"/>
+          <text class="bp-acc-t" x="120" y="195">hanger / axle = grab bar</text>
+        </svg>
+        <figcaption><b>FIG.6 — TRUCK HANDLE.</b> Baseplate through-bolted to the drawer face (rivnuts or bolt+washer behind); the hanger forms the grab bar. 1 board = 2 handles.</figcaption>
+      </figure>
+    </div>
+
+    <!-- CUT LAYOUT -->
+    <figure>
+      <svg viewBox="0 0 760 300" role="img" aria-label="Sheet cut layout">
+        <text class="bp-ts" x="60" y="28">NESTING — two 4×8 sheets of 18mm (1220×2440)</text>
+        <!-- sheet A -->
+        <g transform="translate(60,50)">
+          <rect class="bp-line" x="0" y="0" width="300" height="150"/>
+          <line class="bp-thin" x1="0" y1="75" x2="300" y2="75"/><line class="bp-thin" x1="150" y1="0" x2="150" y2="150"/>
+          <text class="bp-ts" x="40" y="42">SIDE</text><text class="bp-ts" x="195" y="42">SIDE</text>
+          <text class="bp-ts" x="40" y="118">DECK</text><text class="bp-ts" x="195" y="118">DIVIDER</text>
+          <text class="bp-acc-t" x="0" y="-8">SHEET A · 18mm</text>
+        </g>
+        <!-- sheet B -->
+        <g transform="translate(420,50)">
+          <rect class="bp-line" x="0" y="0" width="300" height="150"/>
+          <line class="bp-thin" x1="0" y1="60" x2="300" y2="60"/><line class="bp-thin" x1="180" y1="60" x2="180" y2="150"/>
+          <text class="bp-ts" x="100" y="38">BASE</text>
+          <text class="bp-ts" x="60" y="110">BACK</text><text class="bp-ts" x="210" y="110">SHELVES</text>
+          <text class="bp-acc-t" x="0" y="-8">SHEET B · 18mm</text>
+        </g>
+        <text class="bp-ts" x="60" y="240">+ 1 sheet 12mm → 4 drawer boxes (sides / fronts / backs / bottoms)</text>
+        <text class="bp-ts" x="60" y="262">Have the yard rip sheets to width — cleaner edges, no table saw needed.</text>
+      </svg>
+      <figcaption><b>FIG.7 — CUT NESTING.</b> Indicative layout: 2× 18&nbsp;mm sheets for the carcass + deck, 1× 12&nbsp;mm for the four drawer boxes. Re-nest to your measured sizes before ordering.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ MATERIALS ============ -->
+<section id="materials">
+  <div class="wrap">
+    <span class="eyebrow">04 · Materials</span>
+    <h2>Frame Material — Compared</h2>
+    <p class="lead">Plywood is the recommended build: easiest tools, quiet, warm finish, mid-weight, mid-cost. Here's how it stacks up against the metal routes, with Malaysian frame-material costs (MYR, 2025/26 indicative).</p>
+
+    <div class="scroll">
+    <table class="tbl">
+      <tr><th>Material</th><th class="num">Frame cost</th><th class="num">Weight</th><th>Tools</th><th>Verdict</th></tr>
+      <tr class="pick"><td><b>18mm marine/birch plywood</b> ✅</td><td class="num myr">RM 280–500</td><td class="num">~20–30 kg</td><td>Saw, drill, screws/glue</td><td>Best all-round — recommended</td></tr>
+      <tr><td>T-slot aluminium (3030)</td><td class="num myr">RM 350–450</td><td class="num">~12–18 kg</td><td>Allen key only · no welding</td><td>Lightest, modular, priciest once connectors counted</td></tr>
+      <tr><td>Mild steel (40×40 SHS)</td><td class="num myr">RM 200–280</td><td class="num">~25–40 kg</td><td>Welder + grinder + paint</td><td>Cheapest raw &amp; strongest, but heaviest + needs welding</td></tr>
+    </table>
+    </div>
+
+    <div class="grid g3">
+      <div class="card"><h4>Plywood</h4>
+        <div class="proscons"><div class="pro"><h5>Pros</h5><ul><li>DIY-friendly tools</li><li>Quiet, warm finish</li><li>Easy to modify</li></ul></div><div class="con"><h5>Cons</h5><ul><li>Needs sealing/varnish</li><li>Heavier than alu</li><li>Grade varies a lot</li></ul></div></div>
+      </div>
+      <div class="card"><h4>Aluminium T-slot</h4>
+        <div class="proscons"><div class="pro"><h5>Pros</h5><ul><li>Lightest</li><li>No welding, reconfigurable</li><li>No rust</li></ul></div><div class="con"><h5>Cons</h5><ul><li>Connector cost adds up</li><li>Cold/industrial look</li><li>Needs ply panels anyway</li></ul></div></div>
+      </div>
+      <div class="card"><h4>Steel</h4>
+        <div class="proscons"><div class="pro"><h5>Pros</h5><ul><li>Cheapest raw</li><li>Strongest</li><li>Great if welding a rack too</li></ul></div><div class="con"><h5>Cons</h5><ul><li>Heaviest (payload hit)</li><li>Welder + rust-proofing</li><li>Overkill for a drawer</li></ul></div></div>
+      </div>
+    </div>
+
+    <h3>Recommended plywood (Malaysia) — per 4×8 sheet</h3>
+    <div class="scroll">
+    <table class="tbl">
+      <tr><th>Grade</th><th class="num">12mm</th><th class="num">18mm</th><th>Use / note</th></tr>
+      <tr class="pick"><td><b>Birch-faced plywood</b> ✅</td><td class="num myr">~RM 106</td><td class="num myr">~RM 151</td><td>Best strength-to-weight; clean edges. Recommended carcass</td></tr>
+      <tr><td>Marine plywood (phenolic)</td><td class="num myr">RM 120–130</td><td class="num myr">RM 150–165</td><td>True marine grade; only if it'll genuinely get soaked</td></tr>
+      <tr><td>WBP plywood (waterproof)</td><td class="num myr">RM 80–90</td><td class="num myr">RM 120–135</td><td>Budget rugged; heavier, rougher face</td></tr>
+      <tr><td>Tego film-faced WBP</td><td class="num">—</td><td class="num myr">~RM 85</td><td>Cheap, wipe-clean phenolic face — great drawer floor</td></tr>
+      <tr><td>MR / commercial plywood</td><td class="num myr">RM 60–70</td><td class="num myr">RM 132–158</td><td>Standard local ply; price swings on species</td></tr>
+    </table>
+    </div>
+    <div class="note"><b>Verify the birch core.</b> Ask the yard "all-birch core or birch <em>face</em> on hardwood core?" and the country of origin. True void-free Baltic birch is now mostly import/special-order in Malaysia — much "birch" sold here is a birch face on a tropical-hardwood core (heavier, weaker for drawer boxes). For a drawer build, birch-faced is fine; just know what you're buying.</div>
+    <p><b>You'll need ≈ 2× 18mm + 1× 12mm sheets</b> for a ~1000×850×340 unit (round up to 3× 18mm if you build drawer boxes in 18mm too). Most yards <b>cut-to-size for ~RM1–3/cut</b> — worth it.</p>
+  </div>
+</section>
+
+<!-- ============ HARDWARE ============ -->
+<section id="hardware">
+  <div class="wrap">
+    <span class="eyebrow">05 · Hardware</span>
+    <h2>Slides, Pins &amp; Bits</h2>
+    <p class="lead">The slides make or break a vehicle drawer system — buy the right ones. All prices MYR, indicative 2025/26; confirm load rating with the seller before buying the slides.</p>
+
+    <div class="note"><b>⚠ Buy the right slide.</b> The cheap RM25 "heavy duty" 45&nbsp;mm slides are soft-close cabinet runners (~35&nbsp;kg, often non-locking) — <b>not strong enough</b> for a loaded vehicle drawer. Get the <b>53&nbsp;mm 3-fold "2053-class" lock-in/lock-out</b> slides (~100–120&nbsp;kg). <b>Blum</b> doesn't make a heavy locking slide; <b>Hafele</b> stocks only light 30&nbsp;kg locking off the shelf. True over-travel slides (Accuride 3640) are special-order via Würth/MISUMI MY (RM180–450) — most builders just use the 53&nbsp;mm, which already clears the tailgate.</div>
+
+    <div class="scroll">
+    <table class="tbl">
+      <tr><th>Item</th><th class="num">Qty</th><th class="num">Typical (MYR)</th><th>Where to buy (MY)</th></tr>
+      <tr class="pick"><td><b>53mm locking slides</b> 450–500mm, ~110kg <b>(per pair)</b></td><td class="num">4 pr</td><td class="num myr">RM 85 ea → RM 340</td><td>Shopee MY ("laci besi lock 53mm / 4x4"), Temax, Hommit</td></tr>
+      <tr><td>Skateboard trucks (handles) ♻</td><td class="num">2–4</td><td class="num myr">RM 0 (reuse)</td><td>Your old deck — 2 per board</td></tr>
+      <tr><td>Recessed flush pulls (upper drawers)</td><td class="num">2</td><td class="num myr">RM 12 ea</td><td>Shopee MY, Hommit, Hafele MY</td></tr>
+      <tr><td>Push-to-open / T-lock latch</td><td class="num">4</td><td class="num myr">RM 15 ea</td><td>Shopee MY (toolbox latch sellers)</td></tr>
+      <tr><td>Spring indexing plunger / lock-pin (board pivot)</td><td class="num">1–2</td><td class="num myr">RM 18 ea</td><td>Shopee MY ("indexing plunger"), RS Malaysia</td></tr>
+      <tr><td>Gas struts / lid stays (deck)</td><td class="num">1 pr</td><td class="num myr">RM 22 ea</td><td>Fastmaster MY, Shopee MY, RS Malaysia</td></tr>
+      <tr><td>Rivnut tool kit (one-off)</td><td class="num">1</td><td class="num myr">RM 90</td><td>TOPTUL Malaysia, Shopee (VEVOR)</td></tr>
+      <tr><td>Rivnuts M6/M8 + 304 bolts/washers</td><td class="num">set</td><td class="num myr">RM 50</td><td>Shopee MY, local hardware</td></tr>
+      <tr><td>Threadlocker (Loctite 243, 50ml)</td><td class="num">1</td><td class="num myr">RM 55</td><td>RS Malaysia, SSE KL, Rakan Jaya <em>(avoid Shopee fakes)</em></td></tr>
+      <tr><td>Marine / boot carpet</td><td class="num">~3 m</td><td class="num myr">RM 25/m → 75</td><td>Shopee MY ("karpet boot kereta"), auto-trim shops</td></tr>
+      <tr><td>Aluminium L-angle edge trim</td><td class="num">~2 bars</td><td class="num myr">RM 20 ea</td><td>Shopee MY, ALUCLASS, Man Kian Hardware</td></tr>
+      <tr><td>Food-safe HDPE chopping board</td><td class="num">1</td><td class="num myr">RM 55</td><td>Shopee MY ("HDPE cutting board food grade"), TNGSB</td></tr>
+    </table>
+    </div>
+    <p style="color:var(--muted);font-size:14px">Hardware subtotal: <b class="mono" style="color:var(--green)">≈ RM 760</b> with reused skate-truck handles (vs ~RM 890 with bought handles; ~RM 520 stripped-back budget; RM 1,800+ if you go branded Accuride/Hafele).</p>
+  </div>
+</section>
+
+<!-- ============ CUT LIST ============ -->
+<section id="cutlist">
+  <div class="wrap">
+    <span class="eyebrow">06 · Cut List</span>
+    <h2>Panels &amp; Tools</h2>
+    <p class="lead">Indicative cut list for the 1000×850×340 envelope — <b>re-derive every figure from your measured car</b> and subtract material thickness at each joint. Sizes are nominal (before deducting 18/12mm overlaps).</p>
+    <div class="scroll">
+    <table class="tbl">
+      <tr><th>Panel</th><th class="num">Qty</th><th class="num">Approx size (mm)</th><th class="num">Mat'l</th></tr>
+      <tr><td>Sides</td><td class="num">2</td><td class="num">850 × 340</td><td class="num">18mm</td></tr>
+      <tr><td>Top deck</td><td class="num">1</td><td class="num">1000 × 850</td><td class="num">18mm</td></tr>
+      <tr><td>Base</td><td class="num">1</td><td class="num">1000 × 850</td><td class="num">18mm</td></tr>
+      <tr><td>Centre divider</td><td class="num">1</td><td class="num">850 × 340</td><td class="num">18mm</td></tr>
+      <tr><td>Back</td><td class="num">1</td><td class="num">1000 × 340</td><td class="num">18mm</td></tr>
+      <tr><td>Mid shelves (tier split)</td><td class="num">2</td><td class="num">480 × 850</td><td class="num">18mm</td></tr>
+      <tr><td>Drawer sides</td><td class="num">8</td><td class="num">800 × 110</td><td class="num">12mm</td></tr>
+      <tr><td>Drawer fronts/backs</td><td class="num">8</td><td class="num">430 × 110</td><td class="num">12mm</td></tr>
+      <tr><td>Drawer bottoms</td><td class="num">4</td><td class="num">430 × 800</td><td class="num">12mm</td></tr>
+      <tr><td>Chopping board (HDPE/hardwood)</td><td class="num">1</td><td class="num">430 × 480 × 18</td><td class="num">HDPE</td></tr>
+    </table>
+    </div>
+    <h3>Tools</h3>
+    <p>Circular saw or jigsaw (or have the yard rip) · drill/driver · countersink bit · pocket-hole jig (optional, neat) · clamps · tape + square + pencil · rivnut tool · sander · paintbrush. <b>No welder, no specialist gear.</b></p>
+  </div>
+</section>
+
+<!-- ============ BUILD ============ -->
+<section id="build">
+  <div class="wrap">
+    <span class="eyebrow">07 · Build Steps</span>
+    <h2>Step by Step</h2>
+    <ol style="font-size:15px">
+      <li><b>Measure &amp; template.</b> Cardboard-template the bay (it tapers); confirm arch width, aperture, floor length, no-drill zones.</li>
+      <li><b>Finalise sizes.</b> Re-draw the cut list to your real numbers, deducting 18/12mm at each joint and ~13mm per side for the slides.</li>
+      <li><b>Cut panels</b> (or have the yard cut). Label every piece. Dry-fit before glue.</li>
+      <li><b>Build the carcass:</b> sides + base + back + <b>dead-square centre divider</b>. Glue + screw (or pocket-holes). Square is everything — the slides reference the divider.</li>
+      <li><b>Fit the mid shelves</b> that split each column into upper/lower tiers.</li>
+      <li><b>Mount slides:</b> 53mm locking on the uppers; the <b>longer/over-travel pair</b> on the lowers. Mount fixed members to side + divider, level and parallel.</li>
+      <li><b>Build the four drawer boxes</b> (12mm); test each on its slides for smooth lock-in/lock-out.</li>
+      <li><b>Chopping-board slide:</b> on the lower-left, mount the HDPE board to a sub-tray via a front <b>pivot lock-pin</b>; add the spring detent for the 90° lock; add receiver pins for lift-off relocation.</li>
+      <li><b>Handles:</b> through-bolt the <b>skateboard trucks</b> to the two lower faces (rivnuts/bolt+washer behind); flush pulls on the uppers. Add latches.</li>
+      <li><b>Deck:</b> fit the 18mm top; make the section over the spare well <b>lift-out or hinged</b> (gas struts optional).</li>
+      <li><b>Finish:</b> sand, seal/varnish (or carpet the deck + faces); trim exposed edges with L-angle.</li>
+      <li><b>Install:</b> set on the load floor, <b>strap/bolt to factory tie-down eyes</b> — do not drill the floor pan. Check tailgate clears and rear visibility is intact.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ COST ============ -->
+<section id="cost">
+  <div class="wrap">
+    <span class="eyebrow">08 · Costs</span>
+    <h2>Budget Tiers (MYR)</h2>
+    <p class="lead">Material + hardware only — excludes paint/consumables and your time. The one-off rivnut tool is included once.</p>
+    <div class="grid g3">
+      <div class="cost-tier">
+        <div class="head">Budget<div class="total myr" style="color:var(--green)">~RM 950</div></div>
+        <ul>
+          <li>WBP/Tego ply <b>RM 350</b></li>
+          <li>45→53mm slides (basic) <b>RM 300</b></li>
+          <li>Skate-truck handles <b>RM 0</b></li>
+          <li>HDPE + carpet + bits <b>RM 210</b></li>
+          <li>Rivnut tool <b>RM 90</b></li>
+        </ul>
+      </div>
+      <div class="cost-tier mid">
+        <div class="head">Recommended ★<div class="total" style="color:var(--rust-lt)">~RM 1,550</div></div>
+        <ul>
+          <li>Birch-faced ply <b>RM 410</b></li>
+          <li>53mm locking ×4pr <b>RM 340</b></li>
+          <li>Skate trucks + flush pulls <b>RM 24</b></li>
+          <li>Pivot pin, struts, latches <b>RM 150</b></li>
+          <li>HDPE, carpet, trim, fixings <b>RM 280</b></li>
+          <li>Loctite + rivnut tool <b>RM 145</b></li>
+          <li>Cut-to-size + delivery <b>RM 100</b></li>
+        </ul>
+      </div>
+      <div class="cost-tier">
+        <div class="head">Premium<div class="total myr" style="color:var(--green)">~RM 2,600+</div></div>
+        <ul>
+          <li>Marine ply / some alu <b>RM 600</b></li>
+          <li>Accuride/Hafele slides <b>RM 1,100</b></li>
+          <li>Branded plungers/struts <b>RM 250</b></li>
+          <li>Finishes + trim <b>RM 350</b></li>
+          <li>Tools + sundries <b>RM 300</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOURCING ============ -->
+<section id="sourcing">
+  <div class="wrap">
+    <span class="eyebrow">09 · Where to Buy</span>
+    <h2>Malaysian Sourcing Directory</h2>
+    <div class="grid g3">
+      <div class="card"><h4>Plywood / sheet</h4><p style="font-size:14px;color:var(--muted)">TFStore · De Woodpanel (Shah Alam, cut-to-size) · BuildMate Hardware (KL) · CL Hardware (KL) · Board Ply (Selangor) · Soon Shing (JB) · Pintas (Penang). <em>Skip MR DIY/Kaison — no full 4×8 sheets.</em></p></div>
+      <div class="card"><h4>Slides / hardware</h4><p style="font-size:14px;color:var(--muted)">Shopee MY &amp; Lazada MY (53mm locking slides) · Temax · Hommit · Hafele MY (light/branded) · Würth Industry MY &amp; MISUMI MY (over-travel, special-order).</p></div>
+      <div class="card"><h4>Bits &amp; finishes</h4><p style="font-size:14px;color:var(--muted)">RS Malaysia (plungers, Loctite, struts) · Fastmaster (gas struts) · TOPTUL (rivnut tool) · TNGSB (HDPE) · ALUCLASS / Man Kian (alu angle) · auto-trim shops (boot carpet).</p></div>
+    </div>
+    <div class="tip"><b>Sourcing tip.</b> Shopee/Lazada couriers often cap parcels at ~1.5&nbsp;m — for full 4×8 sheets, order through a yard with cut-to-size + delivery, or have it ripped to width first. Get the slide load rating and the plywood core/origin <b>in writing</b> before paying.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="color:var(--rust-lt);font-family:'Oswald';font-size:16px;letter-spacing:.05em">CAYENNE 957 TWIN-DRAWER BUILD</p>
+    <p>A planning dashboard, not a torque-spec manual. All dimensions are owner-measured/estimated and all prices are indicative MYR (2025/26) — <b>measure your car and confirm prices locally before cutting or buying.</b></p>
+    <p class="src">Sources: Rennlist 955/957 &amp; 958 cargo threads · AkiOverland 955/957 platform · IH8MUD drawer-build threads · Gearmate twin-drawer dims · Parkers/Carbuyer (volume) · Porsche owner's manual (loads) · Malaysian sellers: TFStore, De Woodpanel, BuildMate, CL Hardware, hargakosmy/binaan.my, MalaysiaQuartz, Temax, Hommit, Hafele MY, Würth Industry MY, MISUMI MY, RS Malaysia, Fastmaster, TOPTUL, TNGSB, Singtex/Buildmate (steel), Legion Extruder (alu).</p>
+  </div>
+</footer>
+
+</body>
+</html>
